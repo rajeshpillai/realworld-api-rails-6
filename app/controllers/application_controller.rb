@@ -30,8 +30,9 @@ class ApplicationController < ActionController::Base
     if request.headers['Authorization'].present?
       authenticate_or_request_with_http_token do |token|
         begin
-          jwt_payload = JWT.decode(token, Rails.application.secrets.secret_key_base).first
-
+          # jwt_payload = JWT.decode(token, Rails.application.secrets.secret_key_base).first
+          # 17f0a8486f8914ca71af814f6f5f8b5799866a797684d33200da4cd13737d4dab44adef8f91bc7e5bed8c99b4893b5549fcd9d9c5326436c203cfb9e7e265f5f
+          jwt_payload = JWT.decode(token, "17f0a8486f8914ca71af814f6f5f8b5799866a797684d33200da4cd13737d4dab44adef8f91bc7e5bed8c99b4893b5549fcd9d9c5326436c203cfb9e7e265f5f").first
           @current_user_id = jwt_payload['id']
         rescue JWT::ExpiredSignature, JWT::VerificationError, JWT::DecodeError
           head :unauthorized
