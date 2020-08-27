@@ -228,7 +228,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   devise
   jbuilder (~> 2.7)
-  jwt (~> 1.5.4)
+  jwt
   listen (~> 3.2)
   pg
   puma (~> 4.1)

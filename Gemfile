@@ -61,5 +61,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'acts-as-taggable-on', git: 'https://github.com/mbleigh/acts-as-taggable-on'
 gem 'acts_as_follower'
 gem 'devise'
-gem 'jwt', '~> 1.5.4'
+
+# gem 'jwt', '~> 1.5.4'
+gem 'jwt'
+
 gem 'rack-cors', '~> 0.4.0'
