@@ -18,9 +18,18 @@ class User < ActiveRecord::Base
                        allow_blank: false
 
   def generate_jwt
-    JWT.encode({ id: id,
+
+    # JWT.encode({ id: id,
+    #              exp: 60.days.from_now.to_i },
+    #            Rails.application.secrets.secret_key_base)
+
+  JWT.encode({ id: id,
                  exp: 60.days.from_now.to_i },
-               Rails.application.secrets.secret_key_base)
+               "17f0a8486f8914ca71af814f6f5f8b5799866a797684d33200da4cd13737d4dab44adef8f91bc7e5bed8c99b4893b5549fcd9d9c5326436c203cfb9e7e265f5f")
+
+
+    #17f0a8486f8914ca71af814f6f5f8b5799866a797684d33200da4cd13737d4dab44adef8f91bc7e5bed8c99b4893b5549fcd9d9c5326436c203cfb9e7e265f5f
+
   end
 
   def favorite(article)
