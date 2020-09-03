@@ -53,6 +53,8 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find_by_slug!(params[:slug])
 
+    p "deleting: ", @article
+
     if @article.user_id == @current_user_id
       @article.destroy
 
